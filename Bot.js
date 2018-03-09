@@ -38,7 +38,7 @@ client.on('message', message => {
   };
 
   if (message.content == prefix + "DDSetup") {
-    message.reply(ddsetupmsg)
+    message.reply('DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.')
   }
 
 });
