@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
 const prefix = '+'
+const ddsetupmsg = "Message Here!"
 
 client.on('ready', () => {
   console.log('I am hot and ready!');
@@ -36,8 +37,8 @@ client.on('message', message => {
     message.reply('Commands:+test, +owners , +credits, +games, +group Were adding more soon!')
   };
 
-  if (message.content === prefix + "say") {
-    message.reply(message.content)
+  if (message.content == prefix + "DDSetup") {
+    message.reply(ddsetupmsg)
   }
 
 });
