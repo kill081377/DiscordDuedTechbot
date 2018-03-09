@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
 const prefix = '+'
-const ddsetupmsg = "Message Here!"
+const ddsetupmsg = "DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen."
 
 client.on('ready', () => {
   console.log('I am hot and ready!');
@@ -38,7 +38,7 @@ client.on('message', message => {
   };
 
   if (message.content == prefix + "DDSetup") {
-    message.reply('DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.')
+    message.reply(ddsetupmsg)
   }
 
 });
