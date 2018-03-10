@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = process.env.PREFIX
+const prefix = ""
 
 client.on('ready', () => {
   console.log('I am hot and ready!');
