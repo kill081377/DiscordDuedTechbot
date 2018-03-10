@@ -1,2 +1,2 @@
-# DefinitelyNotBot
-A Discord bot coded in Discord.JS, hosted using Heroku.
+# DuedTechBot
+A Discord bot that's codded by kill081377
