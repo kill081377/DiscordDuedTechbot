@@ -14,13 +14,9 @@ client.on('message', message => {
   if (message.content === prefix + "") {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
-
-  if (message.content === prefix + "autoupdate") {
-    message.reply('```Yes i autoupdate!```')
-  };
   
-  if (message.content === prefix + "autoupdate1") {
-    message.reply('```Yes i autoupdate!```')
+   if (message.content === prefix + "XD") {
+    message.reply('**JUST DO IT!!**')
   };
   
   if (message.content === prefix + "credits") {
