@@ -12,10 +12,14 @@ client.on('message', message => {
   };
 
   if (message.content === prefix + "") {
-    message.reply('```[ERROR!]:Command Not Found! Type +help```')
+    message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
 
   if (message.content === prefix + "autoupdate") {
+    message.reply('```Yes i autoupdate!```')
+  };
+  
+  if (message.content === prefix + "autoupdate1") {
     message.reply('```Yes i autoupdate!```')
   };
   
@@ -36,7 +40,7 @@ client.on('message', message => {
   };
 
   if (message.content === prefix + "help") {
-    message.reply('Commands:+test, +owners , +credits, +games, +group, +DDSetup Were adding more soon!')
+    message.reply('Commands:-test, -owners , -credits, -games, -group, -DDSetup Were adding more soon!')
   };
 
   if (message.content == prefix + "DDSetup") {
