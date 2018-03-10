@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = "-"
 
 client.on('ready', () => {
-  console.log('I am hot and ready!');
+  console.log('client.user.setActivity('Phone', {type: 'WATCHING'});
 });
 
 client.on('message', message => {
