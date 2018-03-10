@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "-"
-
 client.on('ready', () => {
-  console.log('client.user.setActivity('Phone', {type: 'WATCHING'});
+    client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
+});
 
 client.on('message', message => {
   if (message.content == prefix + "test") {
