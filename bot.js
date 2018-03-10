@@ -44,8 +44,8 @@ client.on('message', message => {
   };
   
   if (message.content === prefix + "HQ") {
-    message.reply(' :video_game:WIP!:video_game: ')
-  }
+    message.reply(':video_game:WIP!:video_game:')
+  };
 
 });
  
