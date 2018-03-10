@@ -39,6 +39,10 @@ client.on('message', message => {
     message.reply('Commands:-test, -owners , -credits, -games, -group, -DDSetup Were adding more soon!')
   };
 
+  if (message.content === prefix + "error") {
+    message.reply('https://i.imgur.com/VbgZ5JS.gif')
+  };
+  
   if (message.content == prefix + "DDSetup") {
     message.reply('```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```')
   };
