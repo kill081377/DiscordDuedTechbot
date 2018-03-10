@@ -37,12 +37,16 @@ client.on('message', message => {
 
   if (message.content == prefix + "DDSetup") {
     message.reply('```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```')
+  };
+
+  if (message.content === prefix + "updates") {
+    message.reply('```[NEW UPDATES!]:24/7 uptime!```')
+  };
+  
+  if (message.content === prefix + "HQ") {
+    message.reply(' :video_game:WIP!:video_game: ')
   }
 
 });
-
-  if (message.content === prefix + "HQ") {
-    message.reply(' :video_game:WIP!:video_game: ')
-  };
-
+ 
 client.login(process.env.BOT_TOKEN);
