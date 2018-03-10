@@ -15,6 +15,10 @@ client.on('message', message => {
     message.reply('```[ERROR!]:Command Not Found! Type +help```')
   };
 
+  if (message.content === prefix + "autoupdate") {
+    message.reply('```Yes i autoupdate!```')
+  };
+  
   if (message.content === prefix + "credits") {
     message.reply('```© 2018 DuedTech```')
   };
