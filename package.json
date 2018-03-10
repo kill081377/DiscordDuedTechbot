@@ -1,7 +1,7 @@
 {
-  "name": "DefinitelyNotBot",
-  "description": "A Discord bot coded in Discord.JS, hosted using Heroku.",
-  "version": "1.0.0",
+  "name": "DuedTech",
+  "description": "DuedTech's admin main bot.",
+  "version": "0.0.1",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
