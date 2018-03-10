@@ -4,7 +4,6 @@ const prefix = "-"
 
 client.on('ready', () => {
   console.log('client.user.setActivity('Phone', {type: 'WATCHING'});
-});
 
 client.on('message', message => {
   if (message.content == prefix + "test") {
