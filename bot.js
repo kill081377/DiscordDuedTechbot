@@ -1,9 +1,21 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "-"
+
 client.on('ready', () => {
-    client.user.setActivity('https://git.io/d.js-heroku', {type: 'WATCHING'});
-});
+    var games = [
+        `${client.guilds.size} Servers`,
+        `${client.users.size} Users`,
+        `${client.channels.size} Channels`
+    ];
+    client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
+    client.user.setUsername('Twobit');
+    console.log('I am ready Adam!');
+    console.log(`I have started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+  
+    setInterval(function() {
+        totalTime++;
+}, 1);
 
 client.on('message', message => {
   if (message.content == prefix + "test") {
