@@ -10,11 +10,11 @@ client.on('ready', () => {
   client.user.setGame('Updating!/Weaking up arthur!');
   client.user.setStatus('online')
   client.user.setUsername('A duck with no life :( )');
-  embed.setColor('#0DB221');
+  embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
-  embed.addField('OOOOOOOOOF BRO!', 'Oi artuhr weak up cunt!');
+  embed.addField('UPDATE!', 'Hey admin!, i love you :heartpulse:');
   embed.setTimestamp();
-  client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
+  client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 
 ///198918477795426305
 
@@ -28,11 +28,11 @@ client.on('message', message => {
   if (message.content === prefix + "") {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
-  
+
    if (message.content === prefix + "update") {
-    message.reply('This is the new update ${message.author.username}!')
+    message.reply('This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)')
   };
-  
+
   if (message.content === prefix + "credits") {
     message.reply('```© 2018 DuedTech```')
   };
@@ -56,7 +56,7 @@ client.on('message', message => {
   if (message.content === prefix + "error") {
     message.reply('https://i.imgur.com/VbgZ5JS.gif')
   };
-  
+
   if (message.content == prefix + "DDSetup") {
     message.reply('```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```')
   };
@@ -64,11 +64,11 @@ client.on('message', message => {
   if (message.content === prefix + "updates") {
     message.reply('```[NEW UPDATES!]:24/7 uptime!```')
   };
-  
+
   if (message.content === prefix + "HQ") {
     message.reply(':video_game:WIP!:video_game:')
   };
 
 });
- 
+
 client.login(process.env.BOT_TOKEN);
