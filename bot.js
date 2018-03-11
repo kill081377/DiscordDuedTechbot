@@ -1,11 +1,23 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "-"
+const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
+const prefix = '+'
+const embed = new Discord.RichEmbed();
 
 client.on('ready', () => {
-    client.user.setPresence({ game: { name: `${prefix}help });
-    client.user.setUsername('TestLoL');
-    console.log('I am ready Adam!');
+
+  console.log('I am hot and ready!');
+  client.user.setGame('Updating!/Weaking up arthur!');
+  client.user.setStatus('dnd')
+  client.user.setUsername('A duck with no life :( )');
+  embed.setColor('#0DB221');
+  embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
+  embed.addField('OOOOOOOOOF BRO!', 'Oi artuhr weak up cunt!');
+  embed.setTimestamp();
+  client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
+
+///198918477795426305
+
 });
 
 client.on('message', message => {
