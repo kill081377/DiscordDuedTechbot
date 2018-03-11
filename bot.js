@@ -43,7 +43,7 @@ client.on('message', message => {
   };
 
   if (message.content === prefix + "credits") {
-    message.reply('```© 2018 DuedTech, ID:DaDragon1#2202 NAME:DaDragon (FFTTWW), ID:LuaC#7472 NAME:LuaC (kill081377) You can also say -owners.```')
+    message.reply('```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```')
   };
 
   if (message.content === prefix + "games") {
@@ -76,6 +76,10 @@ client.on('message', message => {
 
   if (message.content === prefix + "HQ") {
     message.reply('WIP!:video_game:')
+  };
+ 
+   if (message.content === prefix + "Fox") {
+    message.reply('https://imgur.com/gallery/S1OPVB6')
   };
 
 });
