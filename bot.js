@@ -8,7 +8,7 @@ client.on('ready', () => {
 
   console.log('I am hot and ready!');
   client.user.setGame('Updating!/Weaking up arthur!');
-  client.user.setStatus('dnd')
+  client.user.setStatus('online')
   client.user.setUsername('A duck with no life :( )');
   embed.setColor('#0DB221');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
@@ -29,8 +29,8 @@ client.on('message', message => {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
   
-   if (message.content === prefix + "XD") {
-    message.reply('**JUST DO IT!!**')
+   if (message.content === prefix + "update") {
+    message.reply('This is the new update ${message.author.username}!')
   };
   
   if (message.content === prefix + "credits") {
