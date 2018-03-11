@@ -5,10 +5,13 @@ const prefix = '+'
 const embed = new Discord.RichEmbed();
 
 client.on('ready', () => {
-
+ var games = [
+        `${client.guilds.size} Servers`,
+        `${client.users.size} Users`,
+        `${client.channels.size} Channels`
+];
   console.log('I am hot and ready!');
-  client.user.setGame('Updating!/Weaking up arthur!');
-  client.user.setStatus('online')
+  client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
   embed.addField('UPDATE!', 'Hey admin!, i love you :heartpulse: hope you love me too ;) ');
