@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
-const prefix = '+'
+const prefix = '-'
 const embed = new Discord.RichEmbed();
 
 client.on('ready', () => {
@@ -14,7 +14,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
-  embed.addField('UPDATE!', 'Hey admin!, i love you :heartpulse: hope you love me too ;) ');
+  embed.addField('UPDATE!', 'Hey admin!, im sorry for the spam :( ');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 
