@@ -27,6 +27,13 @@ client.on('message', message => {
     message.reply('idk')
   };
 
+  if (message.content === prefix + "y") {
+    embed.addField('Commands, lua c not found bro.');
+   embed.setColor('#d90000');
+   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
+   embed.setTimestamp();
+  };
+ 
   if (message.content === prefix + "") {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
