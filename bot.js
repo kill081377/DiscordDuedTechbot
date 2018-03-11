@@ -43,7 +43,7 @@ client.on('message', message => {
   };
 
   if (message.content === prefix + "credits") {
-    message.reply('```© 2018 DuedTech```')
+    message.reply('```© 2018 DuedTech, ID:DaDragon1#2202 NAME:DaDragon (FFTTWW), ID:LuaC#7472 NAME:LuaC (kill081377) You can also say -owners.```')
   };
 
   if (message.content === prefix + "games") {
@@ -75,7 +75,7 @@ client.on('message', message => {
   };
 
   if (message.content === prefix + "HQ") {
-    message.reply(':video_game:WIP!:video_game:')
+    message.reply('WIP!:video_game:')
   };
 
 });
