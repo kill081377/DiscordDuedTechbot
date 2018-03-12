@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const version = "1.0.3";
 const prefix = ">";
 
 
@@ -124,6 +123,10 @@ client.on("message", async message => {
     message.reply(`We have ${client.channels.size}`)
   }
 
+  if (command === "lmtsim") {
+   message.reply(`game.ReplicatedStorage.Limitteds["LIMITED"].Privates.SELLERUSERNAME.Price.Value = 1, http://pastebin.com/raw/r7NkBbDv`)
+  }
+ 
   if (command === "servers") {
     message.reply(`im on ${client.guilds.size} servers`)
   }
