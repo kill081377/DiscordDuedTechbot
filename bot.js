@@ -8,7 +8,7 @@ const prefix = ">";
 
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-   client.user.setPresence({ status: 'online', game: { name: '>help' } });
+   client.user.setGame(`${prefix} is the prefix!`);
 });
 
 client.on("guildCreate", guild => {
