@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const whitelisttags = ["@DaDragon#0803", "@LuaC#7472"]
+const whitelisttags = "@DaDragon#0803", "@LuaC#7472";
 const version = "1.0.3";
 const prefix = ">";
 
@@ -17,7 +17,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.3 (Commands+24/7 uptime added! Other sutuff!)');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.4 (Fixed Whitelist!)');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
@@ -174,12 +174,12 @@ else {
   }
  
  if (command === "updates") {
-   message.reply("```[NEW UPDATES!]:24/7 uptime!```")
-  }
+ message.reply("```[NEW UPDATES!]:24/7 uptime!```")
+ }
  
  if (command === "HQ") {
    message.reply("WIP!:video_game:")
-  }
+ }
  
  if (command === "Fox") {
    message.reply("https://imgur.com/gallery/S1OPVB6")
