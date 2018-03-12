@@ -144,7 +144,7 @@ else {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   }
 
-   if command === "update") {
+   if (command === "update") {
     message.reply('This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)')
   }
 
