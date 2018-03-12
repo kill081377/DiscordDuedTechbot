@@ -1,4 +1,4 @@
-{ "token"  : "NDIyMTE3NDM5OTIxMzI0MDMz.DYcLEg.FVPxUcdZv5DBCbKobR3xA1cu0OE",
+{ "token"  : "process.env.Token",
   "prefix" : ">",
   "playing" : "Updated ONCE AGAIN! xd",
   "whitelisted" : "198918477795426305"
