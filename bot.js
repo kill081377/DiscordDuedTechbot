@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const whitelisted = "271656317758734336";
+const whitelisted = "271656317758734336", "198918477795426305";
 const prefix = ">";
 
 
