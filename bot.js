@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
+const version = "1.0.3";
 const prefix = ">";
 
 
@@ -15,7 +16,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.2 (Commands+24/7 uptime added!)');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.3 (Commands+24/7 uptime added! Other sutuff!)');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
@@ -183,6 +184,10 @@ else {
    message.reply("https://imgur.com/gallery/S1OPVB6")
   }
 
+ if (command === "updateannouce") {
+  message.channel.send(version); 
+ }
+ 
 });
 
 client.login(process.env.Token);
