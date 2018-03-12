@@ -184,6 +184,22 @@ else {
    message.reply("https://imgur.com/gallery/S1OPVB6")
   }
  
+ if (command === "Random") {
+  var randommessages = [
+   'Hello Bro!',
+   'Nice message!',
+   'Lol random message!',
+   'fun fact i can do anythind :p',
+   'oof!',
+   'error',
+   'idk what to type!',
+   'im out of messages.',
+   'lol',
+   'last message!'
+];
+  message.reply(`${randommessages[Math.floor(Math.random()*randommessages.length)]}`)
+ }
+ 
 });
 
 client.login(process.env.Token);
