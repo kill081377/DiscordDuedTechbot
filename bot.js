@@ -1,10 +1,4 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
-const prefix = '-'
-const embed = new Discord.RichEmbed();
-
-const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
