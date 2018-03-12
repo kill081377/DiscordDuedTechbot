@@ -15,7 +15,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated! #2');
+  embed.addField('UPDATE!', `Hey admin!, i just updated! process.env.Version`);
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
