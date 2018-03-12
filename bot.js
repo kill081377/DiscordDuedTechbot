@@ -197,7 +197,7 @@ else {
    'lol',
    'last message!'
 ];
-  message.reply(${randommessages[Math.floor(Math.random()*randommessages.length)]})
+  message.reply(${randommessages[Math.floor(Math.random()*randommessages)]})
  }
  
 });
