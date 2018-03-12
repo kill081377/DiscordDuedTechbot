@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
@@ -128,54 +128,6 @@ else {
   if (command === "members") {
     message.reply(`This server has ${guild.memberCount} members!`)
   }
-
- if (command ===  "") {
-    message.reply('```[ERROR!]:Command Not Found! Type -help```')
-  };
-
-   if (command === "update") {
-    message.reply('This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)')
-  };
-
-  if command === "credits") {
-    message.reply('```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```')
-  };
-
-  if (command === "games") {
-    message.reply(' :video_game:WIP!:video_game: ')
-  };
-
-  if (command === "group") {
-    message.reply('https://web.roblox.com/groups/group.aspx?gid=182116')
-  };
-
-  if (command === "owners") {
-    message.reply('```Credits: ID:DaDragon1#2202 NAME:DaDragon (FFTTWW), ID:LuaC#7472 NAME:LuaC (kill081377)```')
-  };
-
-  if command === "help") {
-    message.reply('Commands:-test, -owners , -credits, -games, -group, -DDSetup Were adding more soon!')
-  };
-
-  if (command === "error") {
-    message.reply('https://i.imgur.com/VbgZ5JS.gif')
-  };
-
-  if (command == "DDSetup") {
-    message.reply('```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```')
-  };
-
-  if (command === "updates") {
-    message.reply('```[NEW UPDATES!]:24/7 uptime!```')
-  };
-
-  if (command === "HQ") {
-    message.reply('WIP!:video_game:')
-  };
- 
-   if (command === "Fox") {
-    message.reply('https://imgur.com/gallery/S1OPVB6')
-  };
 
 });
 
