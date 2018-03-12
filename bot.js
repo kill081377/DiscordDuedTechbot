@@ -8,7 +8,7 @@ const prefix = ">";
 
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  client.user.setGame("what do you like?");
+  client.user.setGame("test");
 });
 
 client.on("guildCreate", guild => {
