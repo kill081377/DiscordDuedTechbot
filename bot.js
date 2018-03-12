@@ -119,14 +119,7 @@ client.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
-if (command === "whitelistcheck") {
-      message.reply("Error sorry wip!")
-    }
-else {
-  message.reply("u do not no de wey!")
-}
-}
-
+ 
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
