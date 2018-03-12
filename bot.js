@@ -142,7 +142,7 @@ else {
 
   if (command === "playing") {
     const changeto = args.join(" ");
-    client.setGame(changeto);
+    client.user.setPresence({ game: { name: `changeto`)}};
 });
 
 client.login(process.env.Token);
