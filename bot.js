@@ -7,13 +7,13 @@ const prefix = ">";
 
 
 client.on('ready', () => {
- var games = [
+ var randomplayings = [
         `${client.guilds.size} Servers`,
         `${client.users.size} Users`,
         `${client.channels.size} Channels`
 ];
   console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
+  client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
   embed.addField('UPDATE!', 'Hey admin!, i just updated!');
@@ -140,6 +140,9 @@ else {
     message.reply(`This server has ${guild.memberCount} members!`)
   }
 
+  if (command === "playing") {
+    const changeto = args.join(" ");
+    client.setGame(changeto);
 });
 
 client.login(process.env.Token);
