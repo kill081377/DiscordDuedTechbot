@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const whitelisted = "271656317758734336", "198918477795426305";
 const prefix = ">";
 
 
@@ -120,7 +119,7 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 if (command === "whitelistcheck") {
-    if (message.author.id === whitelisted) {
+    if (message.author.id === process.env.Whitelistid) {
       message.reply("nice :) ")
     }
 else {
