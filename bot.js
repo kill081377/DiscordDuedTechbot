@@ -16,7 +16,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated!');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated! #2');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
@@ -183,23 +183,7 @@ else {
  if (command === "Fox") {
    message.reply("https://imgur.com/gallery/S1OPVB6")
   }
- 
- if (command === "Random") {
-  var randommessages = [
-   'Hello Bro!',
-   'Nice message!',
-   'Lol random message!',
-   'fun fact i can do anythind :p',
-   'oof!',
-   'error',
-   'idk what to type!',
-   'im out of messages.',
-   'lol',
-   'last message!'
-];
-  message.reply(${randommessages[Math.floor(Math.random()*randommessages)]})
- }
- 
+
 });
 
 client.login(process.env.Token);
