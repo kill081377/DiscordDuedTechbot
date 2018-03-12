@@ -4,84 +4,185 @@ const token = 'NDIxNjY5NDMwMDc0ODAyMTc2.DYQ9XQ.DYXhtbFCHOF3zN-Oz18co5S-448';
 const prefix = '-'
 const embed = new Discord.RichEmbed();
 
-client.on('ready', () => {
- var games = [
-        `${client.guilds.size} Servers`,
-        `${client.users.size} Users`,
-        `${client.channels.size} Channels`
-];
-  console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
-  embed.setColor('#d90000');
-  embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
-  embed.addField('UPDATE!', 'Hey admin!, im sorry for the spam :( ');
-  embed.setTimestamp();
-  client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
+const Discord = require("discord.js");
 
-///198918477795426305
+const client = new Discord.Client();
+const embed = new Discord.RichEmbed();
+const config = require("./config.json");
 
+
+client.on("ready", () => {
+  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+  client.user.setGame(config.playing);
 });
 
-client.on('message', message => {
-  if (message.content == prefix + "test") {
-    message.reply('idk')
-  };
+client.on("guildCreate", guild => {
 
-  if (message.content === prefix + "oof") {
-    embed.addField('Commands, lua c not found bro.');
-   embed.setColor('#d90000');
-   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
-   embed.setTimestamp();
-  };
- 
-  if (message.content === prefix + "") {
+  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+  client.user.setGame(`on ${client.guilds.size} servers`);
+});
+
+client.on("guildDelete", guild => {
+  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+  client.user.setGame(`on ${client.guilds.size} servers`);
+});
+
+
+client.on("message", async message => {
+
+
+
+
+  if(message.author.bot) return;
+
+
+
+  if(message.content.indexOf(config.prefix) !== 0) return;
+
+
+
+
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+
+
+  if(command === "ping") {
+
+
+    const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+  }
+
+  if(command === "say") {
+
+
+    const sayMessage = args.join(" ");
+
+    message.delete().catch(O_o=>{});
+
+    message.channel.send(sayMessage);
+  }
+
+  if(command === "kick") {
+    if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
+
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.kickable)
+      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Please indicate a reason for the kick!");
+
+    await member.kick(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+    message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+
+  }
+
+  if(command === "ban") {
+    if(!message.member.roles.some(r=>["Admin", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
+      return message.reply("Sorry, you don't have permissions to use this!");
+
+    let member = message.mentions.members.first();
+    if(!member)
+      return message.reply("Please mention a valid member of this server");
+    if(!member.bannable)
+      return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
+
+    let reason = args.slice(1).join(' ');
+    if(!reason)
+      return message.reply("Please indicate a reason for the ban!");
+
+    await member.ban(reason)
+      .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
+    message.reply(`${member.user.tag} Banned By ${message.author.tag} Reason: ${reason}`);
+  }
+
+  if(command === "purge") {
+
+    const deleteCount = parseInt(args[0], 10);
+
+    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+
+    const fetched = await message.channel.fetchMessages({count: deleteCount});
+    message.channel.bulkDelete(fetched)
+      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+  }
+if (command === "whitelistcheck") {
+    if (message.author.id === config.whitelisted) {
+      message.reply("nice :) ")
+    }
+else {
+  message.reply("u do not no de wey!")
+}
+}
+
+  if (command === "channels") {
+    message.reply(`We have ${client.channels.size}`)
+  }
+
+  if (command === "servers") {
+    message.reply(`im on ${client.guilds.size} servers`)
+  }
+
+  if (command === "members") {
+    message.reply(`This server has ${guild.memberCount} members!`)
+  }
+
+ if (command ===  "") {
     message.reply('```[ERROR!]:Command Not Found! Type -help```')
   };
 
-   if (message.content === prefix + "update") {
+   if (command === "update") {
     message.reply('This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)')
   };
 
-  if (message.content === prefix + "credits") {
+  if command === "credits") {
     message.reply('```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```')
   };
 
-  if (message.content === prefix + "games") {
+  if (command === "games") {
     message.reply(' :video_game:WIP!:video_game: ')
   };
 
-  if (message.content === prefix + "group") {
+  if (command === "group") {
     message.reply('https://web.roblox.com/groups/group.aspx?gid=182116')
   };
 
-  if (message.content === prefix + "owners") {
+  if (command === "owners") {
     message.reply('```Credits: ID:DaDragon1#2202 NAME:DaDragon (FFTTWW), ID:LuaC#7472 NAME:LuaC (kill081377)```')
   };
 
-  if (message.content === prefix + "help") {
+  if command === "help") {
     message.reply('Commands:-test, -owners , -credits, -games, -group, -DDSetup Were adding more soon!')
   };
 
-  if (message.content === prefix + "error") {
+  if (command === "error") {
     message.reply('https://i.imgur.com/VbgZ5JS.gif')
   };
 
-  if (message.content == prefix + "DDSetup") {
+  if (command == "DDSetup") {
     message.reply('```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```')
   };
 
-  if (message.content === prefix + "updates") {
+  if (command === "updates") {
     message.reply('```[NEW UPDATES!]:24/7 uptime!```')
   };
 
-  if (message.content === prefix + "HQ") {
+  if (command === "HQ") {
     message.reply('WIP!:video_game:')
   };
  
-   if (message.content === prefix + "Fox") {
+   if (command === "Fox") {
     message.reply('https://imgur.com/gallery/S1OPVB6')
   };
 
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(config.token);
