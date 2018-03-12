@@ -6,9 +6,19 @@ const whitelisted = "271656317758734336";
 const prefix = ">";
 
 
-client.on("ready", () => {
-  console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-   client.user.setGame(`${prefix} is the prefix!`);
+client.on('ready', () => {
+ var games = [
+        `${client.guilds.size} Servers`,
+        `${client.users.size} Users`,
+        `${client.channels.size} Channels`
+];
+  console.log('I am hot and ready!');
+  client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
+  embed.setColor('#d90000');
+  embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated!');
+  embed.setTimestamp();
+  client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
 
 client.on("guildCreate", guild => {
