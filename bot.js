@@ -140,6 +140,50 @@ else {
     message.reply(`This server has ${guild.memberCount} members!`)
   }
 
+  if (command === "") {
+   message.reply("```[ERROR!]:Command Not Found! Type -help```") 
+  }
+ 
+  if (command === "update") {
+   message.reply("This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)")
+  }
+ 
+  if (command === "credits") {
+   message.reply("```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```")
+  }
+ 
+ if (command === "games") {
+   message.reply(" :video_game:WIP!:video_game: ")
+  }
+ 
+ if (command === "group") {
+   message.reply()
+  }
+ 
+ if (command === "owners") {
+   message.reply()
+  }
+ 
+ if (command === "help") {
+   message.reply("Commands:-test, -owners , -credits, -games, -group, -DDSetup Were adding more soon!")
+  }
+ 
+ if (command === "DDSetup") {
+   message.reply("```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```")
+  }
+ 
+ if (command === "updates") {
+   message.reply("```[NEW UPDATES!]:24/7 uptime!```")
+  }
+ 
+ if (command === "HQ") {
+   message.reply("WIP!:video_game:")
+  }
+ 
+ if (command === "Fox") {
+   message.reply("https://imgur.com/gallery/S1OPVB6")
+  }
+ 
 });
 
 client.login(process.env.Token);
