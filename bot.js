@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
+const whitelisttags = ["@DaDragon#0803", "@LuaC#7472"]
 const version = "1.0.3";
 const prefix = ">";
 
@@ -120,7 +121,7 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 if (command === "whitelistcheck") {
-    if (message.author.id === process.env.Whitelistid) {
+    if (message.author.tag === whitelisttags) {
       message.reply("nice :) ")
     }
 else {
