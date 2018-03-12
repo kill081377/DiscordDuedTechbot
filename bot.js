@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const config = require("./config.json");
+const prefix = ">";
 
 
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-  client.user.setGame(config.playing);
+  client.user.setGame("what do you like?");
 });
 
 client.on("guildCreate", guild => {
@@ -31,12 +31,12 @@ client.on("message", async message => {
 
 
 
-  if(message.content.indexOf(config.prefix) !== 0) return;
+  if(message.content.indexOf(prefix) !== 0) return;
 
 
 
 
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
 
@@ -109,7 +109,7 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 if (command === "whitelistcheck") {
-    if (message.author.id === config.whitelisted) {
+    if (message.author.id === whitelisted) {
       message.reply("nice :) ")
     }
 else {
@@ -131,4 +131,4 @@ else {
 
 });
 
-client.login(config.token);
+client.login(process.env.Token);
