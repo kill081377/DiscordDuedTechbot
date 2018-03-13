@@ -180,7 +180,7 @@ client.on("message", async message => {
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
   embed.setTimestamp();
-  client.users.find('id', ${message.author.id}.send({ embed });
+  client.users.find('id', {message.author.id}.send({ embed });
  }
  
 });
