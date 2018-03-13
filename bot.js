@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const version = "1.0.5";
+const version = "1.0.6";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"]
 
@@ -15,7 +15,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.5 (Added Commands!)');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.6 (Added Credits!)');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
 });
@@ -139,10 +139,6 @@ client.on("message", async message => {
    message.reply("```[ERROR!]:Command Not Found! Type -help```") 
   }
  
-  if (command === "update") {
-   message.reply("This is the new update Calling you user! (Working Stats:Offline/Broken WIP!)")
-  }
- 
   if (command === "credits") {
    message.reply("```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```")
   }
@@ -155,8 +151,8 @@ client.on("message", async message => {
    message.reply()
   }
  
- if (command === "owners") {
-   message.reply()
+ if (command === "owner") {
+  message.channel.send("Lua C Is The Creator Of Me :slight_smile:")
   }
  
  if (command === "DDSetup") {
