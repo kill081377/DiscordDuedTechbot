@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const version = "1.0.6";
+const version = "1.0.7";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"]
 
@@ -15,9 +15,9 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.6 (Added Credits!)');
+  embed.addField('UPDATE!', 'Hey admin!, i just updated! 1.0.7 (Command in dms!)');
   embed.setTimestamp();
-  client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
+  client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
 });
 
 client.on("guildCreate", guild => {
@@ -176,7 +176,11 @@ client.on("message", async message => {
  }
  
  if (command === "commands") {
-  message.reply(commands);
+  embed.setColor('#00a3cc');
+  embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
+  embed.addField('Commands', commands);
+  embed.setTimestamp();
+  client.users.find('id', '271656317758734336', '198918477795426305', '311252859658436608').send({ embed });
  }
  
 });
