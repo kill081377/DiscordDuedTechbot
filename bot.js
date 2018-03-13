@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const version = "1.0.8";
+const whitelistid = [198918477795426305, 311252859658436608]
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"]
 
@@ -119,6 +120,16 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
  
+  if (command === "check") {
+    if (message.author.id === whitelistid) {
+      message.channel.send("You are whitelisted!")
+     else {
+       message.channel.send("You are not whitelised!")
+     }
+     
+    }
+  }
+  
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
