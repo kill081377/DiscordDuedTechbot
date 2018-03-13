@@ -4,8 +4,7 @@ const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const version = "1.0.5";
 const prefix = ">";
-const commands = [ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), 
-
+const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"]
 
 client.on('ready', () => {
  var randomplayings = [
