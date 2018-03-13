@@ -126,7 +126,6 @@ client.on("message", async message => {
      else {
        message.channel.send("You are not whitelised!")
      }
-     
     }
   }
   
