@@ -176,6 +176,7 @@ client.on("message", async message => {
  }
  
  if (command === "commands") {
+  message.reply("Commands Sent!")
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
