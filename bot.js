@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
-const embed = new Discord.RichEmbed();
 const version = "1.0.9";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
@@ -12,6 +11,7 @@ client.on('ready', () => {
         `${client.users.size} Users`,
         `${client.channels.size} Channels`
 ];
+  const embed = new Discord.RichEmbed();
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | Testing)}}`, type: 0 } });
   embed.setColor('#d90000');
@@ -177,6 +177,7 @@ client.on("message", async message => {
  }
  
  if (command === "commands") {
+  const embed = new Discord.RichEmbed();
   message.reply("Commands Sent!")
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
