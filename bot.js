@@ -13,7 +13,7 @@ client.on('ready', () => {
 ];
   const embed = new Discord.RichEmbed();
   console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | I like pie lua ;3 `}});
+  client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
   embed.addField('UPDATE!', '[UPDATED!] 2.0.0 (Fixed commands + adding music!)');
