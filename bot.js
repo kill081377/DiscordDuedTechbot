@@ -120,6 +120,22 @@ client.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
+  if (command === "math") {
+   var numbers = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10'
+  ];
+   message.reply(`${numbers[Math.floor(Math.random()*numbers.length)]}`)
+  }
+ 
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
