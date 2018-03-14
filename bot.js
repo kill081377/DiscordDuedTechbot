@@ -12,6 +12,7 @@ client.on('ready', () => {
         `${client.channels.size} Channels`
 ];
   const embed = new Discord.RichEmbed();
+  client.user.setUsername('Twobit');
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
