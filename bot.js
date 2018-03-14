@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
-const version = "1.0.9";
+const version = "2.0.0";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
 const admins = [""];
@@ -13,12 +13,12 @@ client.on('ready', () => {
 ];
   const embed = new Discord.RichEmbed();
   console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | Testing)}}`, type: 0 } });
+  client.user.setPresence({ game: { name: `${prefix}help | I like pie lua ;3 `, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)');
+  embed.addField('UPDATE!', '[UPDATED!] 2.0.0 (Fixed commands + adding music!)');
   embed.setTimestamp();
-  client.users.find('id', '0000000000000000').send({ embed });
+  client.users.find('id', '271656317758734336', '311252859658436608', '198918477795426305').send({ embed });
 });
 
 client.on("guildCreate", guild => {
