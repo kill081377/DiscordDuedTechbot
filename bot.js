@@ -13,12 +13,12 @@ client.on('ready', () => {
         `${client.channels.size} Channels`
 ];
   console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
+  client.user.setPresence({ game: { name: `${prefix}help | Testing)}}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
   embed.addField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)');
   embed.setTimestamp();
-  client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
+  client.users.find('id', '0000000000000000').send({ embed });
 });
 
 client.on("guildCreate", guild => {
@@ -178,7 +178,6 @@ client.on("message", async message => {
  
  if (command === "commands") {
   message.reply("Commands Sent!")
-  embed.removeField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)')
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
