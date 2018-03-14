@@ -12,8 +12,6 @@ client.on('ready', () => {
         `${client.users.size} Users`,
         `${client.channels.size} Channels`
 ];
-  const embed = new Discord.RichEmbed();
-  client.user.setUsername('Twobit');
   client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
@@ -178,12 +176,11 @@ client.on("message", async message => {
  }
  
  if (command === "commands") {
-  const embedd = new Discord.RichEmbed();
   message.reply("Commands Sent!")
-  embedd.setColor('#00a3cc');
-  embedd.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
-  embedd.addField('Commands', commands);
-  embedd.setTimestamp();
+  embed.setColor('#00a3cc');
+  embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
+  embed.addField('Commands', commands);
+  embed.setTimestamp();
   client.users.find('id', `${message.author.id}`).send({ embed });
  }
  
