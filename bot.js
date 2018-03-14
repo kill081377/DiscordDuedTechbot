@@ -1,17 +1,16 @@
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
+const embed = new Discord.RichEmbed();
 const version = "2.0.0";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
 
 client.on('ready', () => {
  var randomplayings = [
-        `${client.guilds.size} Servers`,
         `${client.users.size} Users`,
         `${client.channels.size} Channels`
 ];
-  let embed = new Discord.RichEmbed();
   client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
@@ -19,7 +18,6 @@ client.on('ready', () => {
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '311252859658436608', '198918477795426305').send({ embed });
 });
-
 
 client.on("guildCreate", guild => {
 
@@ -178,7 +176,6 @@ client.on("message", async message => {
  
  if (command === "commands") {
   message.reply("Commands Sent!")
-  let embed = new Discord.RichEmbed();
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
