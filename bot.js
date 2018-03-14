@@ -2,9 +2,10 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const version = "1.0.8";
+const version = "1.0.9";
 const prefix = ">";
-const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"]
+const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
+const admins = [""];
 
 client.on('ready', () => {
  var randomplayings = [
@@ -15,7 +16,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
   embed.setColor('#d90000');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', '[UPDATED!] 1.0.8 (Final Update For Today!)');
+  embed.addField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)');
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
 });
