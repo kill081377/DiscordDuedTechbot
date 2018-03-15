@@ -60,13 +60,16 @@ client.on("message", async message => {
   }
 
   if(command === "say") {
-
+if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
+    return message.reply("You do not have the permission");
+   else {
 
     const sayMessage = args.join(" ");
 
     message.delete().catch(O_o=>{});
 
     message.channel.send(sayMessage);
+   } 
   }
 
   if(command === "kick") {
