@@ -9,18 +9,15 @@ const admins = [""];
 
 client.on('ready', () => {
  var randomplayings = [
-        `${client.users.size} Users`,
-        `${client.channels.size} Channels`
+        'error',
+        'Idk',
+        'Mind youre own bussines',
+        'Upgrating myself!',
+        'Coding myself!'
 ];
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
-  embed.setColor('#d90000');
-  embed.setThumbnail('https://cdn.discordapp.com/avatars/198918477795426305/a_ed8f410d0a8654e793943c8a486fbcf4.png');
-  embed.addField('UPDATE!', '[UPDATED!] 2.0.0 ');
-  embed.addField('Fixed!', "I'm not ganna spam you anymore :) fair well!")
-  embed.setTimestamp();
-  client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
-  client.channels.get('422040200177254410').send(`<@&423859024304537619> is taking a break :) `);
+  client.channels.get('422040200177254410').send(```<@&423859024304537619> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well! ```);
 });
 
 client.on("guildCreate", guild => {
