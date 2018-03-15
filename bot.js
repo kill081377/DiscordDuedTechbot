@@ -51,13 +51,14 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 
 
- if(command === "ping") {
+
+  if(command === "ping") {
 
 
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-}
- 
+  }
+
   if(command === "say") {
 if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
     return message.reply("You do not have the permission");
@@ -70,7 +71,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
     message.channel.send(sayMessage);
    } 
   }
- 
+
   if(command === "kick") {
     if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
@@ -109,7 +110,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} Banned By ${message.author.tag} Reason: ${reason}`);
   }
- 
+
   if(command === "purge") {
 
     const deleteCount = parseInt(args[0], 10);
@@ -122,7 +123,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
- if (command === "math") {
+  if (command === "math") {
    var numbers = [
     '1',
     '2',
@@ -137,8 +138,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
   ];
    message.reply(`${numbers[Math.floor(Math.random()*numbers.length)]}`)
   }
-}
-          
+ 
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
@@ -150,34 +150,30 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
   if (command === "servers") {
     message.reply(`im on ${client.guilds.size} servers`)
   }
- 
- 
+
   if (command === "members") {
     message.reply(`This server has ${guild.memberCount} members!`)
   }
 
- 
   if (command === "") {
    message.reply("```[ERROR!]:Command Not Found! Type -help```") 
   }
-
  
   if (command === "credits") {
    message.reply("```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```")
   }
-
+ 
  if (command === "games") {
    message.reply(" :video_game:WIP!:video_game: ")
   }
-
  
  if (command === "group") {
    message.reply()
   }
-
+ 
  if (command === "owner") {
   message.channel.send("Lua C Is The Creator Of Me :slight_smile:")
- }
+  }
  
  if (command === "DDSetup") {
    message.reply("```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```")
@@ -190,17 +186,18 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  if (command === "HQ") {
    message.reply("WIP!:video_game:")
  }
-
+ 
  if (command === "Fox") {
    message.reply("https://imgur.com/gallery/S1OPVB6")
   }
- 
+
  if (command === "updateannouce") {
   message.channel.send(version); 
  }
-
+ 
  if (command === "commands") {
   message.reply("Commands Sent!")
+  embed.removeField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)')
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
