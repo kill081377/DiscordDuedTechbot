@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const version = "1.0.9";
 const prefix = ">";
-const block = ["yes"];
+const block = ["no"];
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
 const admins = [""];
 
