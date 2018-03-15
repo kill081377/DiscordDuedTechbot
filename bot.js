@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const version = "1.0.9";
 const prefix = ">";
-const block = ["no"];
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
 const admins = [""];
 
@@ -52,17 +51,13 @@ client.on("message", async message => {
   const command = args.shift().toLowerCase();
 
 
-
-  if (block === "yes") {
  if(command === "ping") {
 
 
     const m = await message.channel.send("Ping?");
     m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-  }
 }
  
-if (block === "yes") {
   if(command === "say") {
 if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
     return message.reply("You do not have the permission");
@@ -75,9 +70,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
     message.channel.send(sayMessage);
    } 
   }
-}
  
- if (block === "yes") {
   if(command === "kick") {
     if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
@@ -97,9 +90,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
     message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
 
   }
- }
 
- if (block === "yes") {
   if(command === "ban") {
     if(!message.member.roles.some(r=>["Admin", "Founder", "Owner", "Co-Owner"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
@@ -118,9 +109,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`${member.user.tag} Banned By ${message.author.tag} Reason: ${reason}`);
   }
- }
  
-if (block === "yes") {
   if(command === "purge") {
 
     const deleteCount = parseInt(args[0], 10);
@@ -132,9 +121,7 @@ if (block === "yes") {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
-}
 
-   if (block === "yes") {
  if (command === "math") {
    var numbers = [
     '1',
@@ -150,92 +137,68 @@ if (block === "yes") {
   ];
    message.reply(`${numbers[Math.floor(Math.random()*numbers.length)]}`)
   }
- }
-  
- if (block === "yes") {
+}
+          
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
- }
 
- if (block === "yes") {
   if (command === "lmtsim") {
    message.reply(`game.ReplicatedStorage.Limitteds["LIMITED"].Privates.SELLERUSERNAME.Price.Value = 1, http://pastebin.com/raw/r7NkBbDv`)
   }
- }
  
- if (block === "yes") {
   if (command === "servers") {
     message.reply(`im on ${client.guilds.size} servers`)
   }
- }
  
- if (block === "yes") {
+ 
   if (command === "members") {
     message.reply(`This server has ${guild.memberCount} members!`)
   }
- }
+
  
- if (block === "yes") {
   if (command === "") {
    message.reply("```[ERROR!]:Command Not Found! Type -help```") 
   }
- }
+
  
- if (block === "yes") {
   if (command === "credits") {
    message.reply("```© 2018 DuedTech, DaDragon (FFTTWW), LuaC (kill081377) You can also say -owners.```")
   }
- }
-if (block === "yes") {
+
  if (command === "games") {
    message.reply(" :video_game:WIP!:video_game: ")
   }
-}
+
  
-if (block === "yes") {
  if (command === "group") {
    message.reply()
   }
- }
 
-if (block === "yes") {
  if (command === "owner") {
   message.channel.send("Lua C Is The Creator Of Me :slight_smile:")
-  }
-}
+ }
  
-if (block === "yes") {
  if (command === "DDSetup") {
    message.reply("```DaDragons Setup: 2017 ASUS Laptop, Mouse: Razer Naga Trinity, Keybored: Razer Ornata, Main-Screen: Samsung Flat Screen.```")
   }
-}
  
-if (block === "yes") {
  if (command === "updates") {
  message.reply("```[NEW UPDATES!]:24/7 uptime!```")
  }
-}
  
-if (block === "yes") {
  if (command === "HQ") {
    message.reply("WIP!:video_game:")
  }
-}
- 
-if (block === "yes") {
+
  if (command === "Fox") {
    message.reply("https://imgur.com/gallery/S1OPVB6")
   }
-}
  
-if (block === "yes") {
  if (command === "updateannouce") {
   message.channel.send(version); 
  }
-}
- 
-if (block === "yes") {
+
  if (command === "commands") {
   message.reply("Commands Sent!")
   embed.removeField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)')
@@ -245,7 +208,6 @@ if (block === "yes") {
   embed.setTimestamp();
   client.users.find('id', `${message.author.id}`).send({ embed });
  }
-}
  
 });
 
