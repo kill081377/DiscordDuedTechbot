@@ -17,7 +17,7 @@ client.on('ready', () => {
 ];
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
-  client.channels.get('422040200177254410').send(`<@&423859024304537619> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);
+  client.channels.get('422040200177254410').send(`<@271656317758734336> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);
 });
 
 client.on("guildCreate", guild => {
@@ -196,7 +196,6 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  
  if (command === "commands") {
   message.reply("Commands Sent!")
-  embed.removeField('UPDATE!', '[UPDATED!] 1.0.9 (I am at school xD)')
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
   embed.addField('Commands', commands);
