@@ -17,7 +17,7 @@ client.on('ready', () => {
 ];
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
-  client.channels.get('422040200177254410').send(```<@&423859024304537619> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well! ```);
+  client.channels.get('422040200177254410').send(`<@&423859024304537619> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);
 });
 
 client.on("guildCreate", guild => {
