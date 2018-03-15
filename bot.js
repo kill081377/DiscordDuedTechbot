@@ -20,6 +20,7 @@ client.on('ready', () => {
   embed.addField('Fixed!', "I'm not ganna spam you anymore :) fair well!")
   embed.setTimestamp();
   client.users.find('id', '271656317758734336', '198918477795426305').send({ embed });
+  client.channels.get('422040200177254410').send(`<@&423859024304537619> is taking a break :) `);
 });
 
 client.on("guildCreate", guild => {
