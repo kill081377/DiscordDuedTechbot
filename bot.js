@@ -185,8 +185,14 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
    message.reply("WIP!:video_game:")
  }
  
+ if (command === "Setplay") {
+  const playthis = args.join(" ");
+  client.user.setPresence({ game: { name: playthis, type: 0 } });
+ }
+ 
  if (command === "Fox") {
-   message.channel.send("https://imgur.com/gallery/S1OPVB6")
+  message.channel.sendMessage("OOF").attachments
+  ["",{url:"https://imgur.com/gallery/S1OPVB6" }];
   }
 
  if (command === "updateannouce") {
