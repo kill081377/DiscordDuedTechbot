@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-
 const client = new Discord.Client();
 const version = "2.0.0";
 const prefix = ">";
@@ -191,7 +190,8 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  }
  
  if (command === "Fox") {
-  message.channel.sendMessage("OOF").attachments
+  const text = "Test";
+  message.channel.sendMessage(text).attachments
   ["",{url:"https://imgur.com/gallery/S1OPVB6" }];
   }
 
