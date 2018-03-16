@@ -198,8 +198,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
                 "url": "http://api.buienradar.nl/image/1.0/RadarMapNL?a=.gif",
                 }
             }
-        });
-  }
+  });
 
  if (command === "updateannouce") {
   message.channel.send(version)
