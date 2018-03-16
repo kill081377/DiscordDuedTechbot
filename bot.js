@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 const client = new Discord.Client();
-const embed = new Discord.RichEmbed();
 const version = "2.0.0";
 const prefix = ">";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
@@ -195,6 +194,7 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  }
  
  if (command === "commands") {
+  let embed = new Discord.RichEmbed();
   message.reply("Commands Sent!")
   embed.setColor('#00a3cc');
   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
