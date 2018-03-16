@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 const version = "2.0.0";
-const prefix = ">";
+const prefix = ">", "<", ":", "+", "-";
 const commands = ["ping, kick(mod+), ban(admin+), say(vip+), purge(admin+), channels, lmtsim, servers, members, credits, updates, games, group, owners, DDSetup, HQ, Fox, updateannouce(lua c)"];
 const admins = [""];
 
@@ -16,7 +16,7 @@ client.on('ready', () => {
 ];
   console.log('I am hot and ready!');
   client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
-  client.channels.get('422040200177254410').send(`<@271656317758734336> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);
+ //client.channels.get('422040200177254410').send(`<@271656317758734336> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);\\
 });
 
 client.on("guildCreate", guild => {
