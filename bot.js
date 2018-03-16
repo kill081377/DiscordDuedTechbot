@@ -190,9 +190,9 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  }
  
  if (command === "Fox") {
-  const text = "Test";
-  message.channel.sendMessage(text).attachments
-  ["",{url:"https://imgur.com/gallery/S1OPVB6" }];
+  message.channel.send("wtf", {
+    file: "https://i.imgur.com/FXOpbcW.png"
+});
   }
 
  if (command === "updateannouce") {
