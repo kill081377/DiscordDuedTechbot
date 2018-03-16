@@ -14,7 +14,7 @@ client.on('ready', () => {
         'Coding myself!'
 ];
   console.log('I am hot and ready!');
-  client.user.setPresence({ game: { name: `${prefix}help | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
+  client.user.setPresence({ game: { name: `${prefix}commands | ${randomplayings[Math.floor(Math.random()*randomplayings.length)]}`, type: 0 } });
  //client.channels.get('422040200177254410').send(`<@271656317758734336> is officialy taking a break from coding, he has been working on me for 5 days now, So fair well!`);\\
 });
 
@@ -190,9 +190,15 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  }
  
  if (command === "Fox") {
-  message.channel.send("wtf", {
-    file: "https://i.imgur.com/FXOpbcW.png"
-});
+   message.channel.sendMessage({
+        "embed": {
+                title: 'Buienradar',
+                url: 'http://www.buienradar.nl/',
+                "image": {
+                "url": "http://api.buienradar.nl/image/1.0/RadarMapNL?a=.gif",
+                }
+            }
+        });
   }
 
  if (command === "updateannouce") {
