@@ -186,11 +186,11 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
  }
  
  if (command === "Fox") {
-   message.reply("https://imgur.com/gallery/S1OPVB6")
+   message.channel.send("https://imgur.com/gallery/S1OPVB6")
   }
 
  if (command === "updateannouce") {
-  message.channel.send(version); 
+  message.channel.send(version)
  }
  
  if (command === "commands") {
