@@ -189,17 +189,6 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
   client.user.setPresence({ game: { name: playthis, type: 0 } });
  }
  
- if (command === "Fox") {
-   message.channel.sendMessage({
-        "embed": {
-                title: 'Buienradar',
-                url: 'http://www.buienradar.nl/',
-                "image": {
-                "url": "http://api.buienradar.nl/image/1.0/RadarMapNL?a=.gif",
-                }
-            }
-  });
-
  if (command === "updateannouce") {
   message.channel.send(version)
  }
