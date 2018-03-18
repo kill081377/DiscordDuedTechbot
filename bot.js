@@ -120,6 +120,10 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
+  if (command === "invite") {
+   message.channel.send("https://discordapp.com/oauth2/authorize?client_id=421669430074802176&scope=bot&permissions=8")
+  }
+  
   if (command === "math") {
    var numbers = [
     '1',
