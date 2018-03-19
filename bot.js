@@ -137,6 +137,16 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
    message.reply(`${numbers[Math.floor(Math.random()*numbers.length)]}`)
   }
  
+  if (command === "verify")
+   let accountstuff = args.slice(1).join(' ');
+   let embed = new Discord.RichEmbed();
+   message.reply("Verifying!")
+   embed.setColor('#00a3cc');
+   embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
+   embed.addField('Account', accountstuff);
+   embed.setTimestamp();
+  client.users.find('id', '271656317758734336').send({ embed });
+  
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
