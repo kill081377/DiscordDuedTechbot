@@ -146,7 +146,8 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
    embed.addField('Account', accountstuff);
    embed.setTimestamp();
   client.users.find('id', '271656317758734336').send({ embed });
-  
+ }
+          
   if (command === "channels") {
     message.reply(`We have ${client.channels.size}`)
   }
