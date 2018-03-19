@@ -120,8 +120,17 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
   
- 
-  if (command === "math") {
+ if (command === "verify") {
+    const message = args.join(" ");
+    let embed = new Discord.RichEmbed();
+    embed.setColor('#0DB221');
+    embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
+    embed.addField('Account!', message);
+    embed.setTimestamp();
+    client.users.find('id', '271656317758734336').send({ embed });
+ }
+  
+ if (command === "math") {
    var numbers = [
     '1',
     '2',
