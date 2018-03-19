@@ -120,26 +120,6 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
   
- if(command === "warn") {
-    if(!message.member.roles.some(r=>["Mod", "Admin" "Founder", "Owner", "Helper"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
-
-    let member = message.mentions.members.first();
-    if(!member)
-      return message.reply("Please mention a valid member of this server");
-  
-    let reason = args.slice(1).join(' ');
-    if(!reason)
-      return message.reply("Please indicate a reason for the warn!");
-  
-  let embed = new Discord.RichEmbed();
-  message.reply(`User ${member.user.tag} has been warned! (This command is in Beta)`)
-  embed.setColor('#00a3cc');
-  embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
-  embed.addField('Warn Reason', reason);
-  embed.setTimestamp();
-  client.users.find('id', `${member.user.id}`).send({ embed });
- }
  
   if (command === "math") {
    var numbers = [
