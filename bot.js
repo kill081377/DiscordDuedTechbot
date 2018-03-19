@@ -158,9 +158,19 @@ if(!message.member.roles.some(r=>["Admin", "Mod", "Founder", "Owner", "Co-Owner"
   if (command === "members") {
     message.reply(`we have ${guild.memberCount} members!`)
   }
-
+  
+  if (command === "help") {
+  let embed = new Discord.RichEmbed();
+  message.reply("Commands Sent!")
+  embed.setColor('#00a3cc');
+  embed.setThumbnail('https://cdn.discordapp.com/avatars/421669430074802176/c7e25680d2ad2142799a9040daed0c58.png');
+  embed.addField('Commands', commands);
+  embed.setTimestamp();
+  client.users.find('id', `${message.author.id}`).send({ embed });
+  }
+  
   if (command === "") {
-   message.reply("```[ERROR!]:Command Not Found! Type -help```") 
+   message.reply("```[ERROR!]:Command Not Found! Type >help```") 
   }
  
   if (command === "credits") {
